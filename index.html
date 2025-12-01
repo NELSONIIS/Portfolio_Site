@@ -88,36 +88,54 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        
+        <div class="container position-relative">
             <div class="row align-items-center">
-                <div class="col-lg-4 text-center">
-                    <img src="Nelsonprofile.jpg" alt="Nelson Raj - Full Stack Developer" class="profile-img rounded-circle animate__animated animate__fadeIn">
+                <div class="col-lg-4 col-md-5">
+                    <div class="developer-avatar">
+                        <img src="Nelsonprofile.jpg" alt="Nelson Raj - Developer" class="developer-profile-img">
+                    </div>
                 </div>
-                <div class="col-lg-8">
-                    <div class="hero-content animate__animated animate__fadeInRight">
-                        <h1>Nelson Raj</h1>
-                        <h2>I'm a <span class="typing-text"></span></h2>
-                        <p class="lead my-4">With over 2.5 years of experience building digital solutions that drive business growth and enhance user experiences.</p>
-                        <div class="d-flex flex-wrap gap-3">
-                            <a href="mailto:nelsonat2002@gmail.com" class="btn btn-primary">Contact Me</a>
-                            <a href="resume.pdf" class="btn btn-outline-primary" download>Download Resume</a>
+                <div class="col-lg-8 col-md-7">
+                    <div class="hero-content">
+                        <div class="hero-badge animate__animated animate__fadeInDown">
+                            <span class="badge bg-primary px-4 py-2 mb-3">Welcome to my portfolio</span>
+                        </div>
+                        <h1 class="hero-title animate__animated animate__fadeInUp">Nelson Raj</h1>
+                        <h2 class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">I'm a <span class="typing-text"></span></h2>
+                        <p class="lead my-4 animate__animated animate__fadeInUp animate__delay-2s">With 2 years of experience as a .NET Developer, specializing in MVC, MVC Core, and Web API development with expertise in payment gateway integrations.</p>
+                        <div class="d-flex flex-wrap gap-3 animate__animated animate__fadeInUp animate__delay-3s">
+                            <a href="mailto:nelsonat2002@gmail.com" class="btn btn-primary btn-lg">
+                                <i class="fas fa-envelope me-2"></i>Contact Me
+                            </a>
+                            <a href="resume.pdf" class="btn btn-outline-light btn-lg" download>
+                                <i class="fas fa-download me-2"></i>Download Resume
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section-padding">
+    <section id="about" class="section-padding scroll-reveal">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-right">About Me</h2>
+            <h2 class="section-title scroll-reveal-item" data-aos="fade-right">About Me</h2>
             <div class="row">
                 <div class="col-lg-6" data-aos="fade-right">
                     <h3 class="mb-4">Full Stack Developer & UI/UX Enthusiast</h3>
-                    <p>Hello! I'm Nelson, a passionate full-stack developer with over 2.5 years of experience specializing in building exceptional digital experiences. My journey in tech started when I built my first website at 15, and I've been hooked ever since.</p>
-                    <p>I believe in writing clean, efficient code and creating intuitive user interfaces that solve real problems. My approach combines technical expertise with creative thinking to deliver solutions that exceed expectations.</p>
-                    <p>When I'm not coding, you can find me contributing to open-source projects, mentoring junior developers, or exploring the latest tech trends. I'm always excited to take on new challenges and collaborate on innovative projects.</p>
+                    <p>Hello! I'm Nelson, a passionate .NET developer with 2 years of professional experience specializing in building robust web applications. I have successfully worked on nearly 15 projects using ASP.NET MVC, MVC Core, and .NET Web API.</p>
+                    <p>I have extensive experience integrating payment gateways, having successfully implemented 4 different payment solutions in production environments. My expertise includes developing scalable backend systems and creating efficient APIs that power modern web applications.</p>
+                    <p>Beyond professional work, I'm passionate about AI and automation. I've developed personal projects including an AI Chatbot and a Certificate Maker application. I graduated from Don Bosco College with a degree in Computer Application, where I built a strong foundation in software development.</p>
                     <div class="row mt-4">
                         <div class="col-md-6">
                             <ul class="list-unstyled">
@@ -150,17 +168,17 @@
                                 <i class="fas fa-project-diagram text-white fa-lg"></i>
                             </div>
                             <div>
-                                <h5 class="mb-0">10+ Projects</h5>
-                                <p class="mb-0">Completed</p>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="bg-primary p-3 rounded-circle me-3">
-                                <i class="fas fa-users text-white fa-lg"></i>
-                            </div>
-                            <div>
-                                <h5 class="mb-0">10+ Clients</h5>
-                                <p class="mb-0">Satisfied</p>
+                                 <h5 class="mb-0">15+ Projects</h5>
+                                 <p class="mb-0">Successfully Delivered</p>
+                             </div>
+                         </div>
+                         <div class="d-flex align-items-center mb-4">
+                             <div class="bg-primary p-3 rounded-circle me-3">
+                                 <i class="fas fa-credit-card text-white fa-lg"></i>
+                             </div>
+                             <div>
+                                 <h5 class="mb-0">4 Payment Gateways</h5>
+                                 <p class="mb-0">Integrated</p>
                             </div>
                         </div>
                         <div class="d-flex align-items-center">
@@ -179,9 +197,9 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section-padding ">
+    <section id="skills" class="section-padding scroll-reveal">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-right">My Skills</h2>
+            <h2 class="section-title scroll-reveal-item" data-aos="fade-right">My Skills</h2>
             <p class="lead mb-5" data-aos="fade-right">I've worked with a wide range of technologies across the stack, allowing me to build complete solutions from concept to deployment.</p>
             
             <div class="row">
@@ -315,58 +333,25 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="section-padding">
+    <section id="experience" class="section-padding scroll-reveal">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-right">Work Experience</h2>
+            <h2 class="section-title scroll-reveal-item" data-aos="fade-right">Work Experience</h2>
             <p class="lead mb-5" data-aos="fade-right">I've had the privilege to work with some amazing companies and teams throughout my career.</p>
             
             <div class="timeline">
                 <div class="timeline-item" data-aos="fade-up">
-                    <h4>Senior Full Stack Developer</h4>
-                    <h5>Tech Innovations Inc.</h5>
-                    <p class="text-muted">Jan 2020 - Present</p>
-                    <p>Lead development of enterprise web applications using React, Node.js, and AWS. Mentored junior developers and implemented agile methodologies to improve team productivity by 30%.</p>
+                    <h4>.NET Developer</h4>
+                    <h5>Software Development Company</h5>
+                    <p class="text-muted">2023 - Present</p>
+                    <p>Developing enterprise web applications using ASP.NET MVC, MVC Core, and .NET Web API. Specialized in backend development and payment gateway integrations.</p>
+                    <p>Database management using Entity Framework and SQL Server. Collaborating with cross-functional teams to deliver high-quality software solutions.(Mysql)</p>
                     <ul>
-                        <li>Architected and built a scalable microservices platform serving 100k+ users</li>
-                        <li>Reduced page load times by 40% through performance optimization</li>
-                        <li>Implemented CI/CD pipelines reducing deployment time by 60%</li>
-                    </ul>
-                </div>
-                
-                <div class="timeline-item" data-aos="fade-up">
-                    <h4>Full Stack Developer</h4>
-                    <h5>Digital Solutions LLC</h5>
-                    <p class="text-muted">Mar 2017 - Dec 2019</p>
-                    <p>Developed and maintained multiple client websites and web applications using JavaScript, PHP, and MySQL. Collaborated with designers to implement responsive and accessible UI components.</p>
-                    <ul>
-                        <li>Built an e-commerce platform that processed $2M+ in annual sales</li>
-                        <li>Created a custom CMS that improved content publishing workflow by 50%</li>
-                        <li>Integrated third-party APIs for payment processing and shipping</li>
-                    </ul>
-                </div>
-                
-                <div class="timeline-item" data-aos="fade-up">
-                    <h4>Frontend Developer</h4>
-                    <h5>Web Creations Studio</h5>
-                    <p class="text-muted">Jun 2015 - Feb 2017</p>
-                    <p>Transformed design mockups into responsive, interactive websites using HTML, CSS, and JavaScript. Worked closely with clients to understand their needs and deliver solutions that met their business goals.</p>
-                    <ul>
-                        <li>Developed 30+ responsive websites for clients across various industries</li>
-                        <li>Implemented accessibility best practices ensuring WCAG 2.0 compliance</li>
-                        <li>Optimized websites for SEO leading to increased organic traffic</li>
-                    </ul>
-                </div>
-                
-                <!-- Duplicate entry for layout testing -->
-                <div class="timeline-item" data-aos="fade-up">
-                    <h4>Junior Web Developer</h4>
-                    <h5>StartUp Ventures</h5>
-                    <p class="text-muted">Aug 2014 - May 2015</p>
-                    <p>Assisted in the development and maintenance of company websites and web applications. Gained experience with version control, responsive design, and cross-browser compatibility.</p>
-                    <ul>
-                        <li>Maintained and updated existing codebase for company website</li>
-                        <li>Implemented new features based on client feedback</li>
-                        <li>Participated in code reviews and team meetings</li>
+                        <li>Successfully delivered nearly 15 projects using ASP.NET MVC and MVC Core frameworks</li>
+                        <li>Integrated 4 different payment gateways including Cashfree, Easebuzz, Razorpay,Juspay and custom solutions</li>
+                        <li>Developed RESTful Web APIs for mobile and web applications</li>
+                        <li>Implemented secure authentication and authorization systems</li>
+                        <li>Optimized database queries and improved application performance</li>
+                        <li>Collaborated with frontend teams to deliver seamless user experiences</li>
                     </ul>
                 </div>
             </div>
@@ -380,56 +365,17 @@
             <p class="lead mb-5" data-aos="fade-right">My educational background and continuous learning journey.</p>
             
             <div class="row">
-                <div class="col-lg-6 mb-4" data-aos="fade-up">
+                <div class="col-lg-12 mb-4" data-aos="fade-up">
                     <div class="card h-100">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h4 class="card-title mb-0">Master of Computer Science</h4>
-                                <span class="badge bg-primary">2014 - 2016</span>
+                                <h4 class="card-title mb-0">Bachelor of Computer Application (BCA)</h4>
+                                <span class="badge bg-primary">2020 - 2023</span>
                             </div>
-                            <h5 class="text-primary">Stanford University</h5>
-                            <p class="card-text">Specialized in Software Engineering and Human-Computer Interaction. Completed thesis on "Optimizing User Experience in Progressive Web Applications".</p>
-                            <p class="card-text"><strong>Relevant Courses:</strong> Advanced Algorithms, Distributed Systems, UX Research Methods, Cloud Computing</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-6 mb-4" data-aos="fade-up">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h4 class="card-title mb-0">Bachelor of Science in Computer Science</h4>
-                                <span class="badge bg-primary">2010 - 2014</span>
-                            </div>
-                            <h5 class="text-primary">University of California, Berkeley</h5>
-                            <p class="card-text">Graduated with honors. Served as President of the Computer Science Student Association and participated in multiple hackathons.</p>
-                            <p class="card-text"><strong>Relevant Courses:</strong> Data Structures, Web Development, Database Systems, Software Engineering</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-6 mb-4" data-aos="fade-up">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h4 class="card-title mb-0">Frontend Web Development Nanodegree</h4>
-                                <span class="badge bg-primary">2017</span>
-                            </div>
-                            <h5 class="text-primary">Udacity</h5>
-                            <p class="card-text">Advanced program focusing on modern frontend frameworks, responsive design, and performance optimization.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-6 mb-4" data-aos="fade-up">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h4 class="card-title mb-0">AWS Certified Solutions Architect</h4>
-                                <span class="badge bg-primary">2019</span>
-                            </div>
-                            <h5 class="text-primary">Amazon Web Services</h5>
-                            <p class="card-text">Earned certification demonstrating expertise in designing distributed systems on AWS cloud platform.</p>
+                            <h5 class="text-primary">Don Bosco College</h5>
+                            <p class="card-text">Completed Bachelor's degree in Computer Application with a strong foundation in software development, programming languages, and database management.</p>
+                            <p class="card-text"><strong>Relevant Courses:</strong> Object-Oriented Programming, Database Management Systems, Web Technologies, Software Engineering, Data Structures, .NET Framework, System Analysis and Design</p>
+                            <p class="card-text"><strong>Key Achievements:</strong> Developed multiple academic projects including web applications and database systems. Gained practical experience in ASP.NET development and modern web technologies.</p>
                         </div>
                     </div>
                 </div>
@@ -445,74 +391,43 @@
             
             <div class="row">
                 <div class="col-md-6 col-lg-4 mb-4" data-aos="flip-left">
-                    <div class="card h-100">
-                        <img src="https://placehold.co/300x200" class="card-img-top" alt="AWS Certification">
+                    <div class="card h-100 certificate-card">
+                        <div class="certificate-icon">
+                            <i class="fas fa-certificate fa-3x"></i>
+                        </div>
                         <div class="card-body">
-                            <h5 class="card-title">AWS Certified Solutions Architect</h5>
-                            <p class="card-text"><strong>Issuer:</strong> Amazon Web Services</p>
-                            <p class="card-text"><strong>Date:</strong> June 2019</p>
-                            <p class="card-text">Validation of technical expertise in designing and deploying scalable systems on AWS.</p>
+                            <h5 class="card-title">Microsoft Certified: Azure Developer Associate</h5>
+                            <p class="card-text"><strong>Issuer:</strong> Microsoft</p>
+                            <p class="card-text"><strong>Date:</strong> 2024</p>
+                            <p class="card-text">Expertise in designing, building, testing, and maintaining cloud applications and services on Microsoft Azure.</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="col-md-6 col-lg-4 mb-4" data-aos="flip-left">
-                    <div class="card h-100">
-                        <img src="https://placehold.co/300x200" class="card-img-top" alt="React Certification">
+                    <div class="card h-100 certificate-card">
+                        <div class="certificate-icon">
+                            <i class="fas fa-certificate fa-3x"></i>
+                        </div>
                         <div class="card-body">
-                            <h5 class="card-title">React Developer Certification</h5>
-                            <p class="card-text"><strong>Issuer:</strong> Meta</p>
-                            <p class="card-text"><strong>Date:</strong> March 2020</p>
-                            <p class="card-text">Advanced React concepts including hooks, context API, and performance optimization.</p>
+                            <h5 class="card-title">.NET Developer Certification</h5>
+                            <p class="card-text"><strong>Issuer:</strong> Microsoft</p>
+                            <p class="card-text"><strong>Date:</strong> 2023</p>
+                            <p class="card-text">Advanced proficiency in ASP.NET MVC, MVC Core, Web API development and Entity Framework.</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="col-md-6 col-lg-4 mb-4" data-aos="flip-left">
-                    <div class="card h-100">
-                        <img src="https://placehold.co/300x200" class="card-img-top" alt="Node.js Certification">
-                        <div class="card-body">
-                            <h5 class="card-title">Node.js Certified Developer</h5>
-                            <p class="card-text"><strong>Issuer:</strong> OpenJS Foundation</p>
-                            <p class="card-text"><strong>Date:</strong> November 2018</p>
-                            <p class="card-text">Demonstrated proficiency in Node.js, Express, and building RESTful APIs.</p>
+                    <div class="card h-100 certificate-card">
+                        <div class="certificate-icon">
+                            <i class="fas fa-certificate fa-3x"></i>
                         </div>
-                    </div>
-                </div>
-                
-                <!-- Duplicate entries for layout testing -->
-                <div class="col-md-6 col-lg-4 mb-4" data-aos="flip-left">
-                    <div class="card h-100">
-                        <img src="https://placehold.co/300x200" class="card-img-top" alt="JavaScript Certification">
                         <div class="card-body">
-                            <h5 class="card-title">JavaScript Advanced Concepts</h5>
-                            <p class="card-text"><strong>Issuer:</strong> Udemy</p>
-                            <p class="card-text"><strong>Date:</strong> January 2021</p>
-                            <p class="card-text">Mastered advanced JavaScript concepts including closures, prototypal inheritance, and async programming.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4 mb-4" data-aos="flip-left">
-                    <div class="card h-100">
-                        <img src="https://placehold.co/300x200" class="card-img-top" alt="UX Certification">
-                        <div class="card-body">
-                            <h5 class="card-title">UX Design Professional</h5>
-                            <p class="card-text"><strong>Issuer:</strong> Google</p>
-                            <p class="card-text"><strong>Date:</strong> August 2020</p>
-                            <p class="card-text">Comprehensive training in user research, wireframing, prototyping, and usability testing.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4 mb-4" data-aos="flip-left">
-                    <div class="card h-100">
-                        <img src="https://placehold.co/300x200" class="card-img-top" alt="MongoDB Certification">
-                        <div class="card-body">
-                            <h5 class="card-title">MongoDB Certified Developer</h5>
-                            <p class="card-text"><strong>Issuer:</strong> MongoDB University</p>
-                            <p class="card-text"><strong>Date:</strong> May 2019</p>
-                            <p class="card-text">Validation of skills in MongoDB database administration, data modeling, and aggregation.</p>
+                            <h5 class="card-title">Payment Gateway Integration Specialist</h5>
+                            <p class="card-text"><strong>Issuer:</strong> Payment Industry Certification</p>
+                            <p class="card-text"><strong>Date:</strong> 2024</p>
+                            <p class="card-text">Certified in integrating and managing multiple payment gateway solutions including Stripe, PayPal, and Razorpay.</p>
                         </div>
                     </div>
                 </div>
@@ -521,9 +436,9 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section-padding ">
+    <section id="projects" class="section-padding scroll-reveal">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-right">My Projects</h2>
+            <h2 class="section-title scroll-reveal-item" data-aos="fade-right">My Projects</h2>
             <p class="lead mb-5" data-aos="fade-right">A selection of projects I've worked on throughout my career.</p>
             
             <div class="project-filters text-center" data-aos="fade-up">
@@ -535,49 +450,19 @@
             
             <div class="row">
                 <div class="col-md-6 col-lg-4 mb-4 project-card" data-category="web" data-aos="zoom-in">
-                    <div class="card h-100">
-                        <img src="https://placehold.co/400x250" class="card-img-top" alt="E-commerce Platform">
-                        <div class="card-body">
-                            <h5 class="card-title">E-commerce Platform</h5>
-                            <p class="card-text">A full-featured online store with product management, shopping cart, and secure checkout.</p>
-                            <div class="mb-3">
-                                <span class="badge badge-tech">React</span>
-                                <span class="badge badge-tech">Node.js</span>
-                                <span class="badge badge-tech">MongoDB</span>
-                                <span class="badge badge-tech">Stripe</span>
-                            </div>
-                            <a href="#" class="btn btn-outline-primary btn-sm">View Project</a>
+                    <div class="card h-100 project-3d">
+                        <div class="project-icon">
+                            <i class="fas fa-robot fa-3x"></i>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4 mb-4 project-card" data-category="web" data-aos="zoom-in">
-                    <div class="card h-100">
-                        <img src="https://placehold.co/400x250" class="card-img-top" alt="Project Management Tool">
+                        <img src="https://placehold.co/400x250" class="card-img-top" alt="AI Chatbot">
                         <div class="card-body">
-                            <h5 class="card-title">Project Management Tool</h5>
-                            <p class="card-text">A collaborative platform for teams to manage tasks, track progress, and share files.</p>
+                            <h5 class="card-title"><i class="fas fa-robot me-2"></i>AI Chatbot</h5>
+                            <p class="card-text">An intelligent chatbot application powered by AI to provide automated customer support and interactive conversations.</p>
                             <div class="mb-3">
-                                <span class="badge badge-tech">Vue.js</span>
-                                <span class="badge badge-tech">Express</span>
-                                <span class="badge badge-tech">PostgreSQL</span>
-                                <span class="badge badge-tech">Socket.io</span>
-                            </div>
-                            <a href="#" class="btn btn-outline-primary btn-sm">View Project</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4 mb-4 project-card" data-category="mobile" data-aos="zoom-in">
-                    <div class="card h-100">
-                        <img src="https://placehold.co/400x250" class="card-img-top" alt="Fitness Tracker App">
-                        <div class="card-body">
-                            <h5 class="card-title">Fitness Tracker App</h5>
-                            <p class="card-text">Mobile application for tracking workouts, nutrition, and health metrics with personalized recommendations.</p>
-                            <div class="mb-3">
-                                <span class="badge badge-tech">React Native</span>
-                                <span class="badge badge-tech">Firebase</span>
-                                <span class="badge badge-tech">Redux</span>
+                                <span class="badge badge-tech">ASP.NET</span>
+                                <span class="badge badge-tech">AI/ML</span>
+                                <span class="badge badge-tech">C#</span>
+                                <span class="badge badge-tech">SQL Server</span>
                             </div>
                             <a href="#" class="btn btn-outline-primary btn-sm">View Project</a>
                         </div>
@@ -585,15 +470,19 @@
                 </div>
                 
                 <div class="col-md-6 col-lg-4 mb-4 project-card" data-category="tools" data-aos="zoom-in">
-                    <div class="card h-100">
-                        <img src="https://placehold.co/400x250" class="card-img-top" alt="Code Formatter Tool">
+                    <div class="card h-100 project-3d">
+                        <div class="project-icon">
+                            <i class="fas fa-certificate fa-3x"></i>
+                        </div>
+                        <img src="https://placehold.co/400x250" class="card-img-top" alt="Certificate Maker">
                         <div class="card-body">
-                            <h5 class="card-title">Code Formatter Tool</h5>
-                            <p class="card-text">A developer tool for formatting code in multiple languages with customizable style options.</p>
+                            <h5 class="card-title"><i class="fas fa-award me-2"></i>Certificate Maker</h5>
+                            <p class="card-text">An automated certificate generation system for creating and distributing professional certificates with customizable templates.</p>
                             <div class="mb-3">
-                                <span class="badge badge-tech">TypeScript</span>
-                                <span class="badge badge-tech">Webpack</span>
-                                <span class="badge badge-tech">CSS</span>
+                                <span class="badge badge-tech">ASP.NET MVC</span>
+                                <span class="badge badge-tech">C#</span>
+                                <span class="badge badge-tech">PDF Generation</span>
+                                <span class="badge badge-tech">Bootstrap</span>
                             </div>
                             <a href="#" class="btn btn-outline-primary btn-sm">View Project</a>
                         </div>
@@ -601,33 +490,79 @@
                 </div>
                 
                 <div class="col-md-6 col-lg-4 mb-4 project-card" data-category="web" data-aos="zoom-in">
-                    <div class="card h-100">
-                        <img src="https://placehold.co/400x250" class="card-img-top" alt="Real Estate Portal">
+                    <div class="card h-100 project-3d">
+                        <div class="project-icon">
+                            <i class="fas fa-shopping-cart fa-3x"></i>
+                        </div>
+                        <img src="https://placehold.co/400x250" class="card-img-top" alt="E-commerce Platform">
                         <div class="card-body">
-                            <h5 class="card-title">Real Estate Portal</h5>
-                            <p class="card-text">A comprehensive platform for property listings, virtual tours, and agent connections.</p>
+                            <h5 class="card-title"><i class="fas fa-store me-2"></i>E-commerce Platform</h5>
+                            <p class="card-text">Full-featured online store with product management, shopping cart, and integrated payment gateway solutions.</p>
                             <div class="mb-3">
-                                <span class="badge badge-tech">Angular</span>
-                                <span class="badge badge-tech">NestJS</span>
-                                <span class="badge badge-tech">MySQL</span>
-                                <span class="badge badge-tech">AWS</span>
+                                <span class="badge badge-tech">ASP.NET MVC</span>
+                                <span class="badge badge-tech">Web API</span>
+                                <span class="badge badge-tech">SQL Server</span>
+                                <span class="badge badge-tech">Payment Gateway</span>
                             </div>
                             <a href="#" class="btn btn-outline-primary btn-sm">View Project</a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="col-md-6 col-lg-4 mb-4 project-card" data-category="mobile" data-aos="zoom-in">
-                    <div class="card h-100">
-                        <img src="https://placehold.co/400x250" class="card-img-top" alt="Travel Companion App">
+                <div class="col-md-6 col-lg-4 mb-4 project-card" data-category="web" data-aos="zoom-in">
+                    <div class="card h-100 project-3d">
+                        <div class="project-icon">
+                            <i class="fas fa-credit-card fa-3x"></i>
+                        </div>
+                        <img src="https://placehold.co/400x250" class="card-img-top" alt="Payment Integration System">
                         <div class="card-body">
-                            <h5 class="card-title">Travel Companion App</h5>
-                            <p class="card-text">An all-in-one travel app for booking flights, hotels, and creating personalized itineraries.</p>
+                            <h5 class="card-title"><i class="fas fa-money-check-alt me-2"></i>Payment Integration System</h5>
+                            <p class="card-text">Comprehensive payment processing system with support for multiple payment gateways and secure transaction handling.</p>
                             <div class="mb-3">
-                                <span class="badge badge-tech">Flutter</span>
-                                <span class="badge badge-tech">Dart</span>
-                                <span class="badge badge-tech">Node.js</span>
-                                <span class="badge badge-tech">MongoDB</span>
+                                <span class="badge badge-tech">.NET Core</span>
+                                <span class="badge badge-tech">Web API</span>
+                                <span class="badge badge-tech">Stripe</span>
+                                <span class="badge badge-tech">Razorpay</span>
+                            </div>
+                            <a href="#" class="btn btn-outline-primary btn-sm">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4 project-card" data-category="web" data-aos="zoom-in">
+                    <div class="card h-100 project-3d">
+                        <div class="project-icon">
+                            <i class="fas fa-building fa-3x"></i>
+                        </div>
+                        <img src="https://placehold.co/400x250" class="card-img-top" alt="Enterprise Web Application">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-briefcase me-2"></i>Enterprise Web Application</h5>
+                            <p class="card-text">Scalable enterprise solution built with ASP.NET MVC Core featuring role-based access control and advanced reporting.</p>
+                            <div class="mb-3">
+                                <span class="badge badge-tech">ASP.NET Core</span>
+                                <span class="badge badge-tech">MVC</span>
+                                <span class="badge badge-tech">Entity Framework</span>
+                                <span class="badge badge-tech">Azure</span>
+                            </div>
+                            <a href="#" class="btn btn-outline-primary btn-sm">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4 project-card" data-category="web" data-aos="zoom-in">
+                    <div class="card h-100 project-3d">
+                        <div class="project-icon">
+                            <i class="fas fa-code fa-3x"></i>
+                        </div>
+                        <img src="https://placehold.co/400x250" class="card-img-top" alt="RESTful API Development">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-server me-2"></i>RESTful API Development</h5>
+                            <p class="card-text">Robust RESTful Web API services for mobile and web applications with JWT authentication and comprehensive documentation.</p>
+                            <div class="mb-3">
+                                <span class="badge badge-tech">.NET Web API</span>
+                                <span class="badge badge-tech">JWT</span>
+                                <span class="badge badge-tech">Swagger</span>
+                                <span class="badge badge-tech">SQL Server</span>
                             </div>
                             <a href="#" class="btn btn-outline-primary btn-sm">View Project</a>
                         </div>
@@ -648,16 +583,16 @@
                     <div class="bg-primary p-4 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
                         <i class="fas fa-project-diagram text-white fa-2x"></i>
                     </div>
-                    <h3 class="counter" data-target="50">0</h3>
-                    <p>Projects Completed</p>
+                    <h3 class="counter" data-target="15">0</h3>
+                    <p>Projects Delivered</p>
                 </div>
                 
                 <div class="col-md-3 col-6 mb-4" data-aos="fade-up">
                     <div class="bg-primary p-4 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
                         <i class="fas fa-users text-white fa-2x"></i>
                     </div>
-                    <h3 class="counter" data-target="25">0</h3>
-                    <p>Happy Clients</p>
+                    <h3 class="counter" data-target="4">0</h3>
+                    <p>Payment Gateways Integrated</p>
                 </div>
                 
                 <div class="col-md-3 col-6 mb-4" data-aos="fade-up">
@@ -672,7 +607,7 @@
                     <div class="bg-primary p-4 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
                         <i class="fas fa-code-branch text-white fa-2x"></i>
                     </div>
-                    <h3 class="counter" data-target="8">0</h3>
+                    <h3 class="counter" data-target="2">0</h3>
                     <p>Years Experience</p>
                 </div>
             </div>

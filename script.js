@@ -7,10 +7,82 @@ AOS.init({
 // Initialize Typed.js
 document.addEventListener('DOMContentLoaded', function() {
     var typed = new Typed('.typing-text', {
-        strings: ['.Net Full Stack Developer', 'UI/UX Enthusiast', 'Problem Solver', 'Tech Innovator'],
+        strings: ['.NET Developer', 'MVC Expert', 'Web API Specialist', 'Payment Gateway Integrator', 'Problem Solver'],
         typeSpeed: 70,
         backSpeed: 50,
-        loop: true
+        loop: true,
+        showCursor: true,
+        cursorChar: '|'
+    });
+    
+    // Enhanced Scroll Reveal Animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+            }
+        });
+    }, observerOptions);
+    
+    // Observe sections
+    document.querySelectorAll('.scroll-reveal').forEach(el => {
+        observer.observe(el);
+    });
+    
+    // Observe section titles
+    document.querySelectorAll('.scroll-reveal-item').forEach(el => {
+        observer.observe(el);
+    });
+    
+    // Observe cards with stagger effect
+    document.querySelectorAll('.card').forEach((el, index) => {
+        el.style.transitionDelay = `${index * 0.1}s`;
+        observer.observe(el);
+    });
+    
+    // Observe timeline items
+    document.querySelectorAll('.timeline-item').forEach((el, index) => {
+        el.style.transitionDelay = `${index * 0.15}s`;
+        observer.observe(el);
+    });
+    
+    // Observe counters
+    document.querySelectorAll('.counter').forEach(el => {
+        observer.observe(el);
+    });
+    
+    // Skill Progress Bar Animation on Scroll
+    const skillObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const progressBar = entry.target.querySelector('.progress-bar');
+                if (progressBar) {
+                    const width = progressBar.style.width;
+                    progressBar.style.setProperty('--progress-width', width);
+                    progressBar.classList.add('animated');
+                }
+            }
+        });
+    }, observerOptions);
+    
+    document.querySelectorAll('.skill-item').forEach(el => {
+        skillObserver.observe(el);
+    });
+    
+    // Parallax Scroll Effect
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.hero-shapes .shape');
+        
+        parallaxElements.forEach((el, index) => {
+            const speed = (index + 1) * 0.5;
+            el.style.transform = `translateY(${scrolled * speed}px)`;
+        });
     });
 });
 
@@ -126,41 +198,76 @@ filterButtons.forEach(button => {
     });
 });
 
-// Counter Animation
+// Counter Animation with enhanced effect
 const counters = document.querySelectorAll('.counter');
-let counterStarted = false;
+const counterStates = new Map();
 
-function startCounters() {
-    if (counterStarted) return;
+function startCounter(counter) {
+    const counterId = counter.getAttribute('data-target');
     
-    counters.forEach(counter => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
-        const increment = target / 100;
-        
-        if (count < target) {
-            counter.innerText = Math.ceil(count + increment);
-            setTimeout(() => startCounters(), 20);
+    if (counterStates.get(counterId)) return;
+    counterStates.set(counterId, true);
+    
+    const target = +counter.getAttribute('data-target');
+    const duration = 2000;
+    const increment = target / (duration / 16);
+    let current = 0;
+    
+    const updateCounter = () => {
+        current += increment;
+        if (current < target) {
+            counter.innerText = Math.ceil(current);
+            requestAnimationFrame(updateCounter);
         } else {
             counter.innerText = target + '+';
         }
+    };
+    
+    updateCounter();
+}
+
+// Intersection Observer for Counters
+const counterObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            startCounter(entry.target);
+        }
     });
-    
-    counterStarted = true;
-}
+}, {
+    threshold: 0.5
+});
 
-// Check if counters are in viewport
-function checkCounters() {
-    const countersSection = document.getElementById('achievements');
-    const countersPosition = countersSection.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight / 1.3;
-    
-    if (countersPosition < screenPosition) {
-        startCounters();
+counters.forEach(counter => {
+    counterObserver.observe(counter);
+});
+
+// Smooth Parallax Effect on Scroll
+let ticking = false;
+
+window.addEventListener('scroll', function() {
+    if (!ticking) {
+        window.requestAnimationFrame(function() {
+            const scrolled = window.pageYOffset;
+            
+            // Parallax for hero shapes
+            const shapes = document.querySelectorAll('.hero-shapes .shape');
+            shapes.forEach((shape, index) => {
+                const speed = (index + 1) * 0.3;
+                shape.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.05}deg)`;
+            });
+            
+            // Parallax for quote corner
+            const quoteCorner = document.querySelector('.hero-quote-corner');
+            if (quoteCorner && scrolled < 500) {
+                quoteCorner.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+            
+            ticking = false;
+        });
+        
+        ticking = true;
     }
-}
-
-window.addEventListener('scroll', checkCounters);
+});
 
 // Contact Form Validation
 const contactForm = document.getElementById('contactForm');
