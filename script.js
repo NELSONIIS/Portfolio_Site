@@ -5,59 +5,59 @@ AOS.init({
 });
 
 // Initialize Typed.js
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var typed = new Typed('.typing-text', {
-        strings: ['.NET Developer', 'MVC Expert', 'Web API Specialist', 'Payment Gateway Integrator', 'Problem Solver'],
+        strings: ['.NET Full Stack Developer', 'MVC Expert', 'Web API Specialist', 'C# Developer', 'Problem Solver'],
         typeSpeed: 70,
         backSpeed: 50,
         loop: true,
         showCursor: true,
         cursorChar: '|'
     });
-    
+
     // Enhanced Scroll Reveal Animations
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
-    const observer = new IntersectionObserver(function(entries) {
+
+    const observer = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('revealed');
             }
         });
     }, observerOptions);
-    
+
     // Observe sections
     document.querySelectorAll('.scroll-reveal').forEach(el => {
         observer.observe(el);
     });
-    
+
     // Observe section titles
     document.querySelectorAll('.scroll-reveal-item').forEach(el => {
         observer.observe(el);
     });
-    
+
     // Observe cards with stagger effect
     document.querySelectorAll('.card').forEach((el, index) => {
         el.style.transitionDelay = `${index * 0.1}s`;
         observer.observe(el);
     });
-    
+
     // Observe timeline items
     document.querySelectorAll('.timeline-item').forEach((el, index) => {
         el.style.transitionDelay = `${index * 0.15}s`;
         observer.observe(el);
     });
-    
+
     // Observe counters
     document.querySelectorAll('.counter').forEach(el => {
         observer.observe(el);
     });
-    
+
     // Skill Progress Bar Animation on Scroll
-    const skillObserver = new IntersectionObserver(function(entries) {
+    const skillObserver = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const progressBar = entry.target.querySelector('.progress-bar');
@@ -69,16 +69,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, observerOptions);
-    
+
     document.querySelectorAll('.skill-item').forEach(el => {
         skillObserver.observe(el);
     });
-    
+
     // Parallax Scroll Effect
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         const scrolled = window.pageYOffset;
         const parallaxElements = document.querySelectorAll('.hero-shapes .shape');
-        
+
         parallaxElements.forEach((el, index) => {
             const speed = (index + 1) * 0.5;
             el.style.transform = `translateY(${scrolled * speed}px)`;
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Preloader
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     const preloader = document.querySelector('.preloader');
     preloader.style.opacity = '0';
     setTimeout(() => {
@@ -131,7 +131,7 @@ $(document).ready(function () {
 // Back to Top Button
 const backToTopButton = document.querySelector('.back-to-top');
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     if (window.pageYOffset > 300) {
         backToTopButton.classList.add('active');
     } else {
@@ -139,29 +139,29 @@ window.addEventListener('scroll', function() {
     }
 });
 
-backToTopButton.addEventListener('click', function(e) {
+backToTopButton.addEventListener('click', function (e) {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 // Smooth Scrolling for Navigation Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        
+
         const targetId = this.getAttribute('href');
         if (targetId === '#') return;
-        
+
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
             const navbarHeight = document.querySelector('.navbar').offsetHeight;
             const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-            
+
             window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
             });
-            
+
             // Close mobile navbar if open
             const navbarToggler = document.querySelector('.navbar-toggler');
             const navbarNav = document.querySelector('.navbar-collapse');
@@ -177,16 +177,16 @@ const filterButtons = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
 
 filterButtons.forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
         // Remove active class from all buttons
         filterButtons.forEach(btn => btn.classList.remove('active'));
-        
+
         // Add active class to clicked button
         this.classList.add('active');
-        
+
         // Get filter value
         const filterValue = this.getAttribute('data-filter');
-        
+
         // Show/hide projects based on filter
         projectCards.forEach(card => {
             if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
@@ -204,15 +204,15 @@ const counterStates = new Map();
 
 function startCounter(counter) {
     const counterId = counter.getAttribute('data-target');
-    
+
     if (counterStates.get(counterId)) return;
     counterStates.set(counterId, true);
-    
+
     const target = +counter.getAttribute('data-target');
     const duration = 2000;
     const increment = target / (duration / 16);
     let current = 0;
-    
+
     const updateCounter = () => {
         current += increment;
         if (current < target) {
@@ -222,12 +222,12 @@ function startCounter(counter) {
             counter.innerText = target + '+';
         }
     };
-    
+
     updateCounter();
 }
 
 // Intersection Observer for Counters
-const counterObserver = new IntersectionObserver(function(entries) {
+const counterObserver = new IntersectionObserver(function (entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             startCounter(entry.target);
@@ -244,27 +244,27 @@ counters.forEach(counter => {
 // Smooth Parallax Effect on Scroll
 let ticking = false;
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     if (!ticking) {
-        window.requestAnimationFrame(function() {
+        window.requestAnimationFrame(function () {
             const scrolled = window.pageYOffset;
-            
+
             // Parallax for hero shapes
             const shapes = document.querySelectorAll('.hero-shapes .shape');
             shapes.forEach((shape, index) => {
                 const speed = (index + 1) * 0.3;
                 shape.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.05}deg)`;
             });
-            
+
             // Parallax for quote corner
             const quoteCorner = document.querySelector('.hero-quote-corner');
             if (quoteCorner && scrolled < 500) {
                 quoteCorner.style.transform = `translateY(${scrolled * 0.5}px)`;
             }
-            
+
             ticking = false;
         });
-        
+
         ticking = true;
     }
 });
@@ -273,16 +273,16 @@ window.addEventListener('scroll', function() {
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 
-contactForm.addEventListener('submit', function(e) {
+contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    
+
     // Simple validation
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const subject = document.getElementById('subject').value;
     const message = document.getElementById('message').value;
     const honeypot = document.getElementById('website').value;
-    
+
     // Honeypot check
     if (honeypot) {
         formMessage.textContent = 'There was an error sending your message. Please try again.';
@@ -290,14 +290,14 @@ contactForm.addEventListener('submit', function(e) {
         formMessage.style.display = 'block';
         return;
     }
-    
+
     if (!name || !email || !subject || !message) {
         formMessage.textContent = 'Please fill in all required fields.';
         formMessage.classList.add('alert-danger');
         formMessage.style.display = 'block';
         return;
     }
-    
+
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
@@ -306,16 +306,16 @@ contactForm.addEventListener('submit', function(e) {
         formMessage.style.display = 'block';
         return;
     }
-    
+
     // Simulate form submission success
     formMessage.textContent = 'Your message has been sent successfully! I will get back to you soon.';
     formMessage.classList.remove('alert-danger');
     formMessage.classList.add('alert-success');
     formMessage.style.display = 'block';
-    
+
     // Reset form
     contactForm.reset();
-    
+
     // Hide message after 5 seconds
     setTimeout(() => {
         formMessage.style.display = 'none';
@@ -326,4 +326,98 @@ contactForm.addEventListener('submit', function(e) {
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
+});
+
+// Visitor Information Modal
+// IMPORTANT: Replace this URL with your Google Apps Script Web App URL
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw5oNR3Y3xeolwth2MRw5qJBWPfMWIwaUmbBYoio8GUMVcKGJPPkv1xyVpzNJ1oX703/exec';
+
+window.addEventListener('load', function () {
+    // Check if user has already submitted info (using localStorage)
+    // Changing key to '_v2' to reset status for testing
+    const hasSubmittedInfo = localStorage.getItem('visitorInfoSubmitted_v2');
+    const isTestMode = window.location.search.includes('test=true');
+
+    console.log('Visitor Modal Script Loaded. Submitted:', hasSubmittedInfo);
+
+    if (!hasSubmittedInfo || isTestMode) {
+        console.log('Starting 40s timer for Visitor Modal...');
+        // Show modal after delay
+        setTimeout(() => {
+            console.log('Timer finished. Attempting to show Visitor Modal.');
+            const modalElement = document.getElementById('visitorModal');
+            if (modalElement) {
+                const visitorModal = new bootstrap.Modal(modalElement);
+                visitorModal.show();
+            } else {
+                console.error('Visitor Modal element not found!');
+            }
+        }, 20000); // 40 seconds
+    }
+});
+
+// Handle visitor form submission
+document.getElementById('submitVisitorInfo').addEventListener('click', function () {
+    const name = document.getElementById('visitorName').value.trim();
+    const source = document.getElementById('visitorSource').value;
+    const messageDiv = document.getElementById('visitorFormMessage');
+
+    // Validation
+    if (!name || !source) {
+        messageDiv.textContent = 'Please fill in all required fields.';
+        messageDiv.classList.remove('alert-success');
+        messageDiv.classList.add('alert-danger');
+        messageDiv.style.display = 'block';
+        return;
+    }
+
+    // Prepare data
+    const visitorData = {
+        name: name,
+        source: source,
+        timestamp: new Date().toISOString(),
+        page: window.location.href
+    };
+
+    // Show loading state
+    const submitBtn = document.getElementById('submitVisitorInfo');
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+
+    // Send to Google Sheets
+    fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(visitorData)
+    })
+        .then(() => {
+            // Mark as submitted in localStorage
+            localStorage.setItem('visitorInfoSubmitted_v2', 'true');
+
+            // Show success message
+            messageDiv.textContent = 'Thank you! Your information has been saved.';
+            messageDiv.classList.remove('alert-danger');
+            messageDiv.classList.add('alert-success');
+            messageDiv.style.display = 'block';
+
+            // Close modal after 1.5 seconds
+            setTimeout(() => {
+                const visitorModal = bootstrap.Modal.getInstance(document.getElementById('visitorModal'));
+                visitorModal.hide();
+            }, 1500);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            messageDiv.textContent = 'An error occurred. Please try again.';
+            messageDiv.classList.remove('alert-success');
+            messageDiv.classList.add('alert-danger');
+            messageDiv.style.display = 'block';
+
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+        });
 });
