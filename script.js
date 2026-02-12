@@ -7,6 +7,7 @@ AOS.init({
 // Initialize Typed.js
 document.addEventListener('DOMContentLoaded', function () {
     var typed = new Typed('.typing-text', {
+<<<<<<< HEAD
         strings: ['.NET Full Stack Developer', 'MVC & Core Expert', 'REST API Developer','Problem Solver','Tech Enthusiast'],
         typeSpeed: 60,
         backSpeed: 40,
@@ -20,17 +21,34 @@ document.addEventListener('DOMContentLoaded', function () {
     const observerOptions = {
         threshold: 0.15,
         rootMargin: '0px 0px -100px 0px'
+=======
+        strings: ['.NET Full Stack Developer', 'MVC Expert', 'Web API Specialist', 'C# Developer', 'Problem Solver'],
+        typeSpeed: 70,
+        backSpeed: 50,
+        loop: true,
+        showCursor: true,
+        cursorChar: '|'
+    });
+
+    // Enhanced Scroll Reveal Animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+>>>>>>> cdd7c3c968699320bcc1c2e70458b2e206ef3a93
     };
 
     const observer = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('revealed');
+<<<<<<< HEAD
                 
                 // Add ripple effect on reveal
                 if (entry.target.classList.contains('card')) {
                     entry.target.style.setProperty('--reveal-delay', Math.random() * 0.3 + 's');
                 }
+=======
+>>>>>>> cdd7c3c968699320bcc1c2e70458b2e206ef3a93
             }
         });
     }, observerOptions);
@@ -47,8 +65,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Observe cards with stagger effect
     document.querySelectorAll('.card').forEach((el, index) => {
+<<<<<<< HEAD
         el.style.transitionDelay = `${index * 0.08}s`;
         el.style.setProperty('--card-index', index);
+=======
+        el.style.transitionDelay = `${index * 0.1}s`;
+>>>>>>> cdd7c3c968699320bcc1c2e70458b2e206ef3a93
         observer.observe(el);
     });
 
@@ -251,6 +273,7 @@ counters.forEach(counter => {
     counterObserver.observe(counter);
 });
 
+<<<<<<< HEAD
 // Smooth Parallax Effect on Scroll with Mouse Movement
 let ticking = false;
 let mouseX = 0;
@@ -261,12 +284,17 @@ document.addEventListener('mousemove', function(e) {
     mouseX = (e.clientX / window.innerWidth) - 0.5;
     mouseY = (e.clientY / window.innerHeight) - 0.5;
 });
+=======
+// Smooth Parallax Effect on Scroll
+let ticking = false;
+>>>>>>> cdd7c3c968699320bcc1c2e70458b2e206ef3a93
 
 window.addEventListener('scroll', function () {
     if (!ticking) {
         window.requestAnimationFrame(function () {
             const scrolled = window.pageYOffset;
 
+<<<<<<< HEAD
             // Parallax for hero shapes with mouse influence
             const shapes = document.querySelectorAll('.hero-shapes .shape');
             shapes.forEach((shape, index) => {
@@ -275,6 +303,13 @@ window.addEventListener('scroll', function () {
                 const xMove = mouseX * mouseInfluence * (index + 1);
                 const yMove = mouseY * mouseInfluence * (index + 1);
                 shape.style.transform = `translateY(${scrolled * speed}px) translateX(${xMove}px) translateY(${yMove}px) rotate(${scrolled * 0.05 + mouseX * 10}deg)`;
+=======
+            // Parallax for hero shapes
+            const shapes = document.querySelectorAll('.hero-shapes .shape');
+            shapes.forEach((shape, index) => {
+                const speed = (index + 1) * 0.3;
+                shape.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.05}deg)`;
+>>>>>>> cdd7c3c968699320bcc1c2e70458b2e206ef3a93
             });
 
             // Parallax for quote corner
@@ -283,6 +318,7 @@ window.addEventListener('scroll', function () {
                 quoteCorner.style.transform = `translateY(${scrolled * 0.5}px)`;
             }
 
+<<<<<<< HEAD
             // Navbar blur effect on scroll
             const navbar = document.querySelector('.navbar');
             if (scrolled > 50) {
@@ -293,6 +329,8 @@ window.addEventListener('scroll', function () {
                 navbar.style.boxShadow = 'var(--shadow)';
             }
 
+=======
+>>>>>>> cdd7c3c968699320bcc1c2e70458b2e206ef3a93
             ticking = false;
         });
 
@@ -359,6 +397,7 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 });
 
+<<<<<<< HEAD
 // Add subtle cursor trail effect
 let cursorTrail = [];
 const maxTrailLength = 15;
@@ -387,4 +426,98 @@ window.addEventListener('load', function() {
             heroContent.style.transform = 'translateY(0)';
         }, 300);
     }
+=======
+// Visitor Information Modal
+// IMPORTANT: Replace this URL with your Google Apps Script Web App URL
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw5oNR3Y3xeolwth2MRw5qJBWPfMWIwaUmbBYoio8GUMVcKGJPPkv1xyVpzNJ1oX703/exec';
+
+window.addEventListener('load', function () {
+    // Check if user has already submitted info (using localStorage)
+    // Changing key to '_v2' to reset status for testing
+    const hasSubmittedInfo = localStorage.getItem('visitorInfoSubmitted_v2');
+    const isTestMode = window.location.search.includes('test=true');
+
+    console.log('Visitor Modal Script Loaded. Submitted:', hasSubmittedInfo);
+
+    if (!hasSubmittedInfo || isTestMode) {
+        console.log('Starting 40s timer for Visitor Modal...');
+        // Show modal after delay
+        setTimeout(() => {
+            console.log('Timer finished. Attempting to show Visitor Modal.');
+            const modalElement = document.getElementById('visitorModal');
+            if (modalElement) {
+                const visitorModal = new bootstrap.Modal(modalElement);
+                visitorModal.show();
+            } else {
+                console.error('Visitor Modal element not found!');
+            }
+        }, 20000); // 40 seconds
+    }
+});
+
+// Handle visitor form submission
+document.getElementById('submitVisitorInfo').addEventListener('click', function () {
+    const name = document.getElementById('visitorName').value.trim();
+    const source = document.getElementById('visitorSource').value;
+    const messageDiv = document.getElementById('visitorFormMessage');
+
+    // Validation
+    if (!name || !source) {
+        messageDiv.textContent = 'Please fill in all required fields.';
+        messageDiv.classList.remove('alert-success');
+        messageDiv.classList.add('alert-danger');
+        messageDiv.style.display = 'block';
+        return;
+    }
+
+    // Prepare data
+    const visitorData = {
+        name: name,
+        source: source,
+        timestamp: new Date().toISOString(),
+        page: window.location.href
+    };
+
+    // Show loading state
+    const submitBtn = document.getElementById('submitVisitorInfo');
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+
+    // Send to Google Sheets
+    fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(visitorData)
+    })
+        .then(() => {
+            // Mark as submitted in localStorage
+            localStorage.setItem('visitorInfoSubmitted_v2', 'true');
+
+            // Show success message
+            messageDiv.textContent = 'Thank you! Your information has been saved.';
+            messageDiv.classList.remove('alert-danger');
+            messageDiv.classList.add('alert-success');
+            messageDiv.style.display = 'block';
+
+            // Close modal after 1.5 seconds
+            setTimeout(() => {
+                const visitorModal = bootstrap.Modal.getInstance(document.getElementById('visitorModal'));
+                visitorModal.hide();
+            }, 1500);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            messageDiv.textContent = 'An error occurred. Please try again.';
+            messageDiv.classList.remove('alert-success');
+            messageDiv.classList.add('alert-danger');
+            messageDiv.style.display = 'block';
+
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+        });
+>>>>>>> cdd7c3c968699320bcc1c2e70458b2e206ef3a93
 });
