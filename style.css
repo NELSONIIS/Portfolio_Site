@@ -136,7 +136,6 @@ h1, h2, h3, h4, h5, h6 {
 body:not([data-theme="light"]) .navbar {
     background-color: rgba(10, 14, 26, 0.8);
     border-bottom: 1px solid rgba(70, 102, 255, 0.2);
-    background-color: rgba(255, 255, 255, 0.95);
     box-shadow: var(--shadow);
     transition: var(--transition);
 }
@@ -1227,33 +1226,41 @@ input:checked+.slider::after {
 }
 
 .contact-form .form-control {
-    padding: 0.75rem 1rem;
-    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    border-radius: 16px;
     border: 2px solid var(--glass-border);
-    transition: var(--transition);
-    background-color: var(--card-light) !important;
-    backdrop-filter: blur(10px);
+    transition: var(--transition-bounce);
+    background: rgba(30, 40, 70, 0.85) !important;
+    box-shadow: 0 4px 24px 0 rgba(70,102,255,0.08);
+    backdrop-filter: blur(16px);
     color: var(--text-color) !important;
+    font-size: 1.08rem;
+    font-family: 'Inter', 'Poppins', sans-serif;
+    letter-spacing: 0.01em;
 }
 
 .contact-form .form-control::placeholder {
-    color: rgba(156, 163, 175, 0.7);
-    border-radius: 8px;
-    border: 1px solid #d1d5db;
+    color: #7ea1ffcc;
+    font-size: 1.02rem;
+    opacity: 0.85;
+    font-family: 'Inter', 'Poppins', sans-serif;
+    letter-spacing: 0.01em;
     transition: var(--transition);
-    background-color: var(--card-light) !important;
 }
 
 .contact-form .form-control:focus {
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 4px rgba(70, 102, 255, 0.15);
-    background-color: var(--glass-bg) !important;
-    transform: translateY(-2px);
+    box-shadow: 0 0 0 6px rgba(70, 102, 255, 0.18);
+    background: rgba(40, 60, 120, 0.92) !important;
+    transform: translateY(-2px) scale(1.03);
+    outline: none;
 }
 
 .contact-form .form-control:hover {
-    border-color: var(--primary-light);
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 4px rgba(71, 224, 255, 0.13);
+    background: rgba(30, 40, 70, 0.95) !important;
+    transform: scale(1.01);
 }
 
 .theme-switch {
@@ -1305,17 +1312,20 @@ input:checked + .slider:before {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 45px;
-    height: 45px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    background: var(--glass-bg);
+    background: rgba(30, 40, 70, 0.85);
     color: var(--primary-color);
-    margin-right: 1rem;
+    margin-right: 1.1rem;
+    margin-bottom: 0.2rem;
     transition: var(--transition-bounce);
     border: 2px solid var(--glass-border);
-    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 12px 0 rgba(70,102,255,0.10);
+    backdrop-filter: blur(12px);
     position: relative;
     overflow: hidden;
+    font-size: 1.35rem;
 }
 
 .social-icon::before {
@@ -1326,32 +1336,34 @@ input:checked + .slider:before {
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    transition: all 0.4s ease;
+    background: linear-gradient(120deg, var(--primary-color), var(--secondary-color), #fff 80%);
+    opacity: 0.18;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     transform: translate(-50%, -50%);
 }
 
 .social-icon:hover::before {
-    width: 100%;
-    height: 100%;
+    width: 120%;
+    height: 120%;
 }
 
 .social-icon:hover {
-    color: white;
-    transform: translateY(-5px) scale(1.1) rotate(360deg);
-    box-shadow: 0 10px 25px rgba(70, 102, 255, 0.4);
-    border-color: var(--primary-color);
+    color: #fff;
+    transform: translateY(-6px) scale(1.13) rotate(-8deg);
+    box-shadow: 0 12px 32px 0 rgba(71,224,255,0.18);
+    border-color: var(--secondary-color);
 }
 
 .social-icon i {
     position: relative;
     z-index: 1;
-    width: 40px;
-    height: 40px;
+    width: 27px;
+    height: 29px;
     border-radius: 50%;
-    background-color: var(--bg-light);
-    color: var(--primary-color);
-    margin-right: 1rem;
+    background: transparent;
+    color: inherit;
+    margin: 0;
+    font-size: 1.25em;
     transition: var(--transition);
 }
 
